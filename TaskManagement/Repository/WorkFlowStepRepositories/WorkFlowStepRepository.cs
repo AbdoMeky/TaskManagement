@@ -34,7 +34,7 @@ namespace TaskManagement.Repository.WorkFlowStepRepositories
 
         public string Delete(int id)
         {
-            var step = _context.WorkFlowSteps.FirstOrDefault(x => x.Id == id);
+            var step = _context.WorkFlowSteps.Find(id);
             if (step == null)
             {
                 return "No WorkFlowStep has this Id to delete.";
@@ -72,7 +72,7 @@ namespace TaskManagement.Repository.WorkFlowStepRepositories
         }
         public ShowWorkFlowStepsDTO Get(int id)
         {
-            var step= _context.WorkFlowSteps.FirstOrDefault(x=>id==x.Id);
+            var step= _context.WorkFlowSteps.Find(id);
             if(step is null)
             {
                 return null;

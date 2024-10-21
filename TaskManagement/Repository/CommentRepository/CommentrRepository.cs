@@ -33,7 +33,7 @@ namespace TaskManagement.Repository.CommentRepository
 
         public string DeleteComent(int id)
         {
-            var comment=_context.Comments.FirstOrDefault(x => x.Id == id);
+            var comment=_context.Comments.Find(id);
             if (comment is null)
             {
                 return "No Comment has this Id";
